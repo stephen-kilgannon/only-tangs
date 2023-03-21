@@ -8,8 +8,8 @@ class UserRepository {
         connect();
     }
 
-    async getUser() {
-        const users = await User.find({});
+    async getUser(user) {
+        const users = await User.findOne({"username": user});
         console.log('users:::', users);
         return users;
     }
