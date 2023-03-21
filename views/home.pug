@@ -1,0 +1,31 @@
+extends layout 
+block content
+  body(style=ali)
+    top
+      h1 #{greeting}
+      p Last login time: #{lastLogin}
+      button#checkin-button Check In
+      p Pressed #{checkinCount} times.
+
+    main
+      h2 Events Table
+      table
+        thead
+          tr
+            th Type
+            th Message
+        tbody
+          each event in events
+            tr
+              td= event.type
+              td= event.message
+    script.
+      const getDataButton = document.querySelector('#checkin-button');
+      getDataButton.addEventListener('click', () => {
+        fetch('/checkin')
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error(error));
+          location.reload() 
+
+      });

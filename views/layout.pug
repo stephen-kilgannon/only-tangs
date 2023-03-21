@@ -3,5 +3,19 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script.
+      document.querySelector('header img').addEventListener('click', () => {
+        window.location.href = '/';
+      });
   body
-    block content
+    nav
+      ul
+        li
+          a(href='/home') Home
+        li
+          a(href='/login') Login
+        li
+          a(href='/events') Events
+        li
+          a(href='/users') User
+    block content  
