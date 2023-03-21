@@ -1,0 +1,12 @@
+html
+  head
+    title Login
+  body(style=ali)
+    form(action="/login", method="POST")
+      label(for="username") Username:
+      input(type="text", id="username", name="username")
+      br
+      label(for="password") Password:
+      input(type="password", id="password", name="password")
+      br
+      input(type="submit", value="Login")
