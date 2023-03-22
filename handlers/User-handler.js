@@ -9,9 +9,13 @@ class UserRepository {
     }
 
     async getUser(user) {
-        const users = await User.findOne({"username": user});
-        console.log('users:::', users);
-        return users;
+        let data = {};
+        try {
+            data = await User.findOne({"username": user});
+        } catch(err) {
+            console.log('Error::' + err);
+        }
+        return data;
     }
 
     async createUser(user) {
