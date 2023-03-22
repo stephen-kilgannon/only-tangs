@@ -57,7 +57,6 @@ router.post("/register", async function (req, res, next) {
 
 async function isUserValid(username) {
   const userRecord = await user.getUser(username)
-  console.log(userRecord)
   if(userRecord?._id) {
       return userRecord
   }

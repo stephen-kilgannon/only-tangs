@@ -10,7 +10,6 @@ class EventRepository {
 
     async getEvent() {
         const events = await Event.find({});
-        console.log('events:::', events);
         return events;
     }
 
