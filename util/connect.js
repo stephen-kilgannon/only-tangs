@@ -3,17 +3,9 @@ var logger = require('morgan');
 
 const connect = () => {
 
-    const url = 'mongodb://localhost:27017/ot_database';
-
-    mongoose.connect(url)
-
-    mongoose.connection.once("open", async () => {
-        console.log("Connected to database");
-    });
-      
-    mongoose.connection.on("error", (err) => {
-        console.log("Error connecting to database  ", err);
-    });
+    mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.error('MongoDB connection error:', err));
 }
 
 const disconnect = () => {
