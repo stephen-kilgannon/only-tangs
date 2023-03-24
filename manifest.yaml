@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webapp
+  name: webapp
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: webapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - image: gcr.io/winter-runway-380620/webapp:v1
+        name: webapp
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 80 
+        env:
+          - name: MONGO_URI
+            value: "mongodb://mongo:27017/myapp"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: load-balancer
+spec:
+  ports:
+  - port: 80
+    targetPort: 3000
+    protocol: TCP
+  selector:
+    app: webapp
+  type: LoadBalancer
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongo
+spec:
+  containers:
+  - name: mongo
+    image: mongo
+    ports:
+    - containerPort: 27017
