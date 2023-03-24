@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "onlytangs",
+  "private_key_id": "2cba7775d00489e9cfc585c31c9da23d3fbd1f06",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCd5MuRMV4gajSS\n5EvQXfIpt/Q2EfISbl38UkjLPWQ3Gug5+ZUVARHL9GZMcfykNBsYKwp7VTqAtZPL\nClUvLRK6Y95HdRDufSEGXHElB90tftUNWywXSXQ/EuS4RQ6WNkgiWc9bJ8tHzBcD\nSoEGNKasG0M+o+ItYaeKXlyndrcJrgde3UQhFig28Ez5NX7iH0gtyQ+0hg/I6eRn\nhT+GNB1n6xneeTraE5EAxoksR3zph/y3JfHXD91xyT64nJ1dC5dPjj+Y/QxTBnpv\nc+Cc1NTr8Ab02uDk+cZBKNXmrLvWmFnzWQv+NEx6qQxqRkvjLBOMvz/Kv6u1TseO\n87h4Y43dAgMBAAECggEAF6liJVHR4ocv9kRupRzzDbPyzciOL5tpC8dT/9slIcnv\nO8Luh72HinpHe1TIsN3bIpnOohFxaTjs20xi3CVDzXlqZeiB/09yq8aeMRe22lrL\nuErttlasbEhbTM8SgsnDMRym4aj6wnlwCG75m3G3+YpDX0eFfVoJVsfR2EnG39T/\nk/jgmzZMqrCxiFIjMdQExgaJbR2sWHIrfPtf3LoAJvFlDbkmypNhmRSIlcyIFXtp\n/fN8uf3wC/Jb68c8jVktXDG9xHfG6vK9XFs6hj6vJ392VcysFXx58SiabBxGCpgQ\nnoNMJxl4pW4xEfOXBjfv3s2069LLYF0w7pgCWRQ8kQKBgQDSvLZQdjn95CTGgNPK\nPGMuhy+gPY/anpjZFlpFn+UqY056RapKoXvDFn0VtFyPp0CfI4cVRn9wlmmyov8D\nFJ9IjXbgrh55e6TxwAYRomP/XcOU+4plptBXUwJuugtgUCZIVzS+onMDPSnf3KIz\nBOF3rCmfXqIYzufTlraSxJEXrQKBgQC/zoLRs4DaX3rQFikrEoPulrXp58kYVvyV\n9twKISs4+v4E089L4EBFO6RLAw+jHtrwPyKJFs/8aVmsO7GgL0NzTKe2O50vBcLe\nfDuuKXb7W/e0hRe9KnsCLgD7t+8+vSK5nafim6wF3m6aRH7vLKIzfXDSfNgfWiVq\nYTiN/xXU8QKBgBJfpb2qMTAzvgkYnl6ZmUQrQTnFZE95WHZE/qXnZQGnGuaKQGi1\nX6cIxOspiJB10qqNXG+8b8wPMTQEBhvspl6bBuxcAggxgZYaWe0brYBMWosYy15F\nhxC2ChZBXlCNbGkOQWkFnOWBZa9A+1tbZ5UZi597jsJ+97N5Bn4RaV0ZAoGAR0SV\nSRO4eetmN7E0RMPRb7JiD3JHPxr7KUGbSsw+QiLIhcSpzpiZaOAbUJ/njIWndgMP\ncv6d8zy1zBA2FL3bAxlla4nFArbSTFa+2hygEA+A/3tAcdI5+HpddSpH4/jk0TEq\nM0ICbf/S+tEelQHxls4yQJOQvj2Bj4BmQiSY2RECgYEAqtO50CZAXmsKyiIDQdzJ\nOnS7aHWrkeQN0PhuaoZ0MmJtdN/h1N88PxZHQ0r02EgwWUl/FwdKETVDzGB0/+zP\nkvOpaZ2IR2hnB9CoXroCIkDOifv6AxxygBhvpWukVFVaVtFmXutiuhyPrv4wAI+N\nK6dFTO3aVvbGykmxe3YogPM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "only-tangs-service@onlytangs.iam.gserviceaccount.com",
+  "client_id": "111249347851418990450",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/only-tangs-service%40onlytangs.iam.gserviceaccount.com"
+}
