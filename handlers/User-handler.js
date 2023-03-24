@@ -9,13 +9,13 @@ class UserRepository {
     }
 
     async getUser(user) {
-        let data = {};
         try {
-            data = await User.findOne({"username": user});
+            const data = await User.findOne({'username': user});
+            return data?._doc;
         } catch(err) {
             console.log('Error::' + err);
         }
-        return data;
+        
     }
 
     async createUser(user) {

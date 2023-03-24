@@ -56,6 +56,8 @@ class EventRepository {
         return data;
     }
 
+    
+
 }
 
 module.exports = new EventRepository();
