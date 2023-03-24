@@ -14,6 +14,6 @@ services:
     environment:
       - NODE_ENV=production
       - MONGO_URI=mongodb://mongo:27017/myapp
-      - GOOGLE_APPLICATION_CREDENTIALS=./winter-runway-380620-c58e082b1a29.json
+      - GOOGLE_APPLICATION_CREDENTIALS=./onlytangs-2cba7775d004.json
     depends_on:
       - mongo
