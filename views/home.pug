@@ -14,11 +14,13 @@ block content
           tr
             th Type
             th Message
+            th Timestamp
         tbody
           each event in events
             tr
               td= event.type
               td= event.message
+              td= event.createdAt
     script.
       const getDataButton = document.querySelector('#checkin-button');
       getDataButton.addEventListener('click', () => {

@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 var event = require("../handlers/event-handler");
 var user = require("../handlers/User-handler");
+const loginHandaler = require('../handlers/login-handler')
+const registerHandler = reuire('../handlers/register-handler.js')
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -9,10 +11,10 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/home", async function (req, res, next) {
-  const data = await event.getEvent()
+  const data = await event.getEvent();
   res.render("home", {
     user: req.session.userId,
-    lastLogin: '17:10 21-03-2023',
+    lastLogin: "17:10 21-03-2023",
     checkinCount: data.length,
     events: data,
   });
@@ -23,56 +25,43 @@ router.get("/login", function (req, res, next) {
 });
 
 router.get("/checkin", async function (req, res, next) {
-  const body = {
-    message: `${req.session.userId} has checked in`,
-    type: "Check In",
-    user: "6419c4d9076fb852326e106f"
-}
-  const payload = await event.createEvent(body);
-  if (!payload) return res.status(409).send(new Error("unable to create event"));
-  if (payload) return res.status(200).send(payload);
+  const message = `${req.session.userId} has checked in`;
+  const type = "Check In";
+  createLoginEvent(res, message, type, req.session.uid);
 });
 
 router.post("/login", async function (req, res, next) {
-  const validUser = await isUserValid(req.body.username)
-  if (validUser) {
-    // Store the user ID in the session
-    req.session.userId = req.body.username;
-    res.redirect('/home')
-} else {
-  res.render("register")
-}
+  const login = await loginHandaler.logon(req.body.username);
+  if (login) {
+    res.redirect("/home");
+  } else {
+    res.render("register");
+  }
 });
 
 router.post("/register", async function (req, res, next) {
-  const validUser = await createUser(req)
+  const validUser = await createUser(req);
   if (validUser) {
-    // Store the user ID in the session
-    req.session.userId = req.body.username;
-    res.redirect('/home')
-} else {
-  res.render("register")
-}
+    res.redirect("/home");
+  } else {
+    res.render("register");
+  }
 });
 
-async function isUserValid(username) {
-  const userRecord = await user.getUser(username)
-  if(userRecord?._id) {
-      return userRecord
-  }
- else return null
-}
 
-async function createUser(req){
+
+
+
+async function createLoginEvent(res, message, type, uid) {
   const body = {
-    "username": req.body.username,
-    "password": req.body.password,
-    "name"    : req.body.name,
-  }
-  const createUser = await user.createUser(body)
-    if(createUser._doc){
-      return createUser
-    }
+    message: message,
+    type: type,
+    user: uid,
+  };
+  const payload = await event.createEvent(body);
+  if (!payload)
+    return res.status(409).send(new Error("unable to create event"));
+  if (payload) return res.status(200).send(payload);
 }
 
 module.exports = router;
