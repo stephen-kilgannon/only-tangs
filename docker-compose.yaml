@@ -6,7 +6,6 @@ services:
     container_name: mongo
 
   myapp:
-    image: gcr.io/OnlyTangs/webapp:v1
     build: .
     container_name: myapp
     ports:
@@ -14,6 +13,5 @@ services:
     environment:
       - NODE_ENV=production
       - MONGO_URI=mongodb://mongo:27017/myapp
-      - GOOGLE_APPLICATION_CREDENTIALS=./onlytangs-2cba7775d004.json
     depends_on:
       - mongo
