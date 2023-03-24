@@ -6,6 +6,7 @@ services:
     container_name: mongo
 
   myapp:
+    image: gcr.io/OnlyTangs/webapp:v1
     build: .
     container_name: myapp
     ports:
@@ -13,5 +14,6 @@ services:
     environment:
       - NODE_ENV=production
       - MONGO_URI=mongodb://mongo:27017/myapp
+      - GOOGLE_APPLICATION_CREDENTIALS=./winter-runway-380620-c58e082b1a29.json
     depends_on:
       - mongo
