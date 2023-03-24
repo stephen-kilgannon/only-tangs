@@ -18,7 +18,7 @@ spec:
         app: webapp
     spec:
       containers:
-      - image: gcr.io/winter-runway-380620/webapp:v1
+      - image: gcr.io/onlytangs/webapp:v1.0
         name: webapp
         imagePullPolicy: Always
         resources: {}
