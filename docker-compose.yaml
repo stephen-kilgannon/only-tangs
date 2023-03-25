@@ -4,6 +4,8 @@ services:
   mongo:
     image: mongo
     container_name: mongo
+    volumes:
+      - ./data:/data/db  # Map the host directory `./data` to the container directory `/data/db`
 
   myapp:
     build: .
