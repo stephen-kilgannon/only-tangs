@@ -20,5 +20,8 @@ EXPOSE 3000
 ENV NODE_ENV=production
 ENV MONGO_URI=mongodb://mongo:27017/myapp
 
+# Add a volume for the data directory
+VOLUME ["/data/db"]
+
 # Start the application
 CMD ["npm", "start"]
